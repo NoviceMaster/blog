@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'backend.user',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,9 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static')
 # ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'avatar').replace('\\', '/')
+MEDIA_URL = '/avatar/'
 
 # redis配置
 CACHES = {
@@ -224,3 +229,5 @@ LOGGING = {
         },
     }
 }
+
+AUTH_USER_MODEL = 'user.User'
